@@ -819,20 +819,6 @@ class UserApi(IncrementalApi, CRUDExternalApi, TaggableApi):
                                    include=include)
 
     @extract_id(User)
-    def votes(self, user, include=None):
-        """
-        Retrieve the votes for this user.
-
-        :param include: list of objects to sideload. `Side-loading API Docs
-            <https://developer.zendesk.com/rest_api/docs/core/side_loading>`__.
-        :param user: User object or id
-        """
-        return self._query_zendesk(self.endpoint.votes,
-                                   'vote',
-                                   id=user,
-                                   include=include)
-
-    @extract_id(User)
     def organizations(self, user, include=None):
         """
         Retrieve the organizations for this user.
@@ -2172,6 +2158,12 @@ class CommentApi(HelpCentreApiBase):
     def user_comments(self, user):
         return self._query_zendesk(self.endpoint.user_comments,
                                    object_type='comment',
+                                   id=user)
+
+    @extract_id(User)
+    def user_votes(self, user):
+        return self._query_zendesk(self.endpoint.user_votes,
+                                   object_type='vote',
                                    id=user)
 
 

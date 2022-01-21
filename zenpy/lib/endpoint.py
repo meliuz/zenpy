@@ -621,7 +621,6 @@ class EndpointFactory(object):
     users.organization_memberships = SecondaryEndpoint(
         'users/%(id)s/organization_memberships.json')
     users.organizations = SecondaryEndpoint('users/%(id)s/organizations.json')
-    users.votes = SecondaryEndpoint('users/%(id)s/votes.json')
     users.related = SecondaryEndpoint('users/%(id)s/related.json')
     users.requested = SecondaryEndpoint('users/%(id)s/tickets/requested.json')
     users.requests = SecondaryEndpoint('users/%(id)s/requests.json')
@@ -695,6 +694,8 @@ class EndpointFactory(object):
         'help_center/articles/{}/comments/{}.json')
     help_centre.articles.user_comments = SecondaryEndpoint(
         'help_center/users/%(id)s/comments.json')
+    help_centre.articles.user_votes = SecondaryEndpoint(
+        'help_center/users/%(id)s/votes.json')
     help_centre.articles.labels = SecondaryEndpoint(
         'help_center/articles/%(id)s/labels.json')
     help_centre.articles.translations = SecondaryEndpoint(
