@@ -621,6 +621,7 @@ class EndpointFactory(object):
     users.organization_memberships = SecondaryEndpoint(
         'users/%(id)s/organization_memberships.json')
     users.organizations = SecondaryEndpoint('users/%(id)s/organizations.json')
+    users.votes = SecondaryEndpoint('users/%(id)s/votes.json')
     users.related = SecondaryEndpoint('users/%(id)s/related.json')
     users.requested = SecondaryEndpoint('users/%(id)s/tickets/requested.json')
     users.requests = SecondaryEndpoint('users/%(id)s/requests.json')
