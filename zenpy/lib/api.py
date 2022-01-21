@@ -2037,14 +2037,14 @@ class VoteApi(Api):
         return self._get(url)
 
     @extract_id(Article, Post, Comment)
-    def vote_up(self, help_centre_object):
+    def vote_up(self, help_centre_object, payload={}):
         url = self._build_url(self.endpoint.votes.up(id=help_centre_object))
-        return self._post(url, payload={})
+        return self._post(url, payload=payload)
 
     @extract_id(Article, Post, Comment)
-    def vote_down(self, help_centre_object):
+    def vote_down(self, help_centre_object, payload={}):
         url = self._build_url(self.endpoint.votes.down(id=help_centre_object))
-        return self._post(url, payload={})
+        return self._post(url, payload=payload)
 
 
 class VoteCommentApi(Api):
