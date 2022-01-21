@@ -2046,6 +2046,11 @@ class VoteApi(Api):
         url = self._build_url(self.endpoint.votes.down(id=help_centre_object))
         return self._post(url, payload=payload)
 
+    @extract_id(User)
+    def user_votes(self, user):
+        return self._query_zendesk(self.endpoint.user_votes,
+                                   object_type='vote',
+                                   id=user)
 
 class VoteCommentApi(Api):
     @extract_id(Article, Post, Comment)
@@ -2158,12 +2163,6 @@ class CommentApi(HelpCentreApiBase):
     def user_comments(self, user):
         return self._query_zendesk(self.endpoint.user_comments,
                                    object_type='comment',
-                                   id=user)
-
-    @extract_id(User)
-    def user_votes(self, user):
-        return self._query_zendesk(self.endpoint.user_votes,
-                                   object_type='vote',
                                    id=user)
 
 
