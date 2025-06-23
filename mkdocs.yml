@@ -1,0 +1,6 @@
+---
+site_name: zenpy
+nav:
+  - Home: README.md
+plugins:
+  - techdocs-core
