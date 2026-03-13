@@ -1,11 +1,11 @@
 run_tests: &run_tests
-    - run:
-        name: install zenpy
-        command: |
-          python -m venv venv
-          . venv/bin/activate
-          pip install -r requirements.dev
-          make unittest
+  - run:
+      name: install zenpy
+      command: |
+        python -m venv venv
+        . venv/bin/activate
+        pip install -r requirements.dev
+        make unittest
 
 version: 2
 jobs:
@@ -75,3 +75,16 @@ workflows:
       - python3.6
       - python3.7
       - python3.8
+
+  build-docs:
+    jobs:
+      - infra/build-techdocs:
+          name: build-techdocs
+          context: global
+          filters:
+            branches:
+              only:
+                - main
+                - master
+orbs:
+  infra: meliuz/infra-orb@1.23
