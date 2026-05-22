@@ -5,11 +5,17 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: meliuz/zenpy
-  description: '# Zenpy
+  description: |-
+    # Zenpy
 
+<<<<<<< Updated upstream
 
     Zenpy is a Python wrapper for the Zendesk, Chat and HelpCentre APIs. The goal
     of the project is to make it easy to write clean, fast, Pythoni...'
+=======
+    Zenpy is a Python wrapper for the Zendesk, Chat and HelpCentre APIs. The goal of
+    the project is to make it easy to write clean, fast, Pythoni...
+>>>>>>> Stashed changes
   name: zenpy
 spec:
   lifecycle: production
